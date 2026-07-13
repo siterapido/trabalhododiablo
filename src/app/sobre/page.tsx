@@ -9,12 +9,12 @@ const passos = [
   {
     num: "02",
     title: "Entre em Contato",
-    desc: "Manda mensagem no Discord ou WhatsApp. A gente alinha preço, prazo e método de pagamento.",
+    desc: "Manda mensagem no Discord ou WhatsApp. A gente alinha preço, prazo e pagamento.",
   },
   {
     num: "03",
-    title: "Pagamento",
-    desc: "Pix ou Crypto. Só pagamento antecipado para serviços avulsos. Parcelamos pacotes grandes.",
+    title: "Pagamento via Pix",
+    desc: "Pix rápido e sem taxa de câmbio. Também aceitamos Crypto. Parcelamos pacotes acima de R$ 200.",
   },
   {
     num: "04",
@@ -54,7 +54,6 @@ const seguranca = [
 export default function Sobre() {
   return (
     <>
-      {/* Header */}
       <section className="py-16 bg-diablo-dark border-b border-diablo-stone-light/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-5xl font-cinzel text-diablo-gold mb-4">
@@ -68,7 +67,6 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* Quem somos */}
       <section className="py-16 bg-diablo-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -85,7 +83,8 @@ export default function Sobre() {
                 <p>
                   A Blizzard criou um jogo incrível, mas o grind pós-endgame é pesado.
                   A gente acredita que você deveria poder aproveitar o melhor do jogo
-                  sem passar 40h por semana na frente da tela.
+                  sem passar 40h por semana na frente da tela — e pagando em Real,
+                  sem taxa de câmbio abusiva.
                 </p>
                 <p>
                   Por isso a gente faz o trabalho pesado. Você curte o resultado.
@@ -112,7 +111,6 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* Segurança */}
       <section className="py-16 bg-diablo-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -133,7 +131,6 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* Como funciona */}
       <section className="py-16 bg-diablo-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -158,10 +155,10 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-12 bg-diablo-dark border-t border-diablo-stone-light/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-xl font-cinzel text-diablo-gold mb-3">Bora? 🔥</h2>
+          <p className="text-text-secondary text-sm mb-4">Pagamento via Pix — rapidinho.</p>
           <Link
             href="/contato"
             className="inline-flex items-center gap-2 px-6 py-3 bg-diablo-gold text-diablo-black font-semibold rounded hover:bg-diablo-gold-light transition-colors"

@@ -5,37 +5,37 @@ const services = [
     icon: "⚡",
     title: "Power Leveling",
     desc: "Suba de nível rapidamente. De 1 a 60 + Paragon sem estresse.",
-    prices: ["1-60: $10", "Paragon 10 níveis: $5", "Paragon 50 níveis: $20"],
+    prices: ["1-60: R$ 60", "Paragon 10 níveis: R$ 25", "Paragon 50 níveis: R$ 100"],
   },
   {
     icon: "👹",
     title: "Helliquary Raid",
     desc: "Carry semanal nos chefes Helliquary. Toma conta de tudo.",
-    prices: ["Por boss: $5", "Pack semanal (3 bosses): $12", "Pack mensal: $40"],
+    prices: ["Por boss: R$ 20", "Pack semanal (3 bosses): R$ 50", "Pack mensal: R$ 180"],
   },
   {
     icon: "🌀",
     title: "Challenge Rift",
     desc: "Clear de Challenge Rift em qualquer tier. Garantido.",
-    prices: ["Tier 1-50: $8", "Tier 51-100: $15", "Tier 100+: $25"],
+    prices: ["Tier 1-50: R$ 35", "Tier 51-100: R$ 65", "Tier 100+: R$ 120"],
   },
   {
     icon: "⚔️",
     title: "PvP Rank Boost",
     desc: "Suba seu ranking em Battlegrounds. Rating competitivo.",
-    prices: ["Bronze → Prata: $10", "Prata → Ouro: $20", "Ouro → Lendário: $50+"],
+    prices: ["Bronze → Prata: R$ 60", "Prata → Ouro: R$ 120", "Ouro → Lendário: R$ 350+"],
   },
   {
     icon: "🎫",
     title: "Battle Pass",
     desc: "Complete o Battle Pass diário/semanal sem jogar.",
-    prices: ["BP Normal: $15", "BP Reforçado: $25", "BP + Níveis: $35"],
+    prices: ["BP Normal: R$ 70", "BP Reforçado: R$ 130", "BP + Níveis: R$ 180"],
   },
   {
     icon: "💎",
     title: "Gem & Item Farm",
     desc: "Farm de gemas lendárias, sets e equipamentos específicos.",
-    prices: ["Gema Lendária: $8", "Set completo: $20", "Item específico: $5"],
+    prices: ["Gema Lendária: R$ 40", "Set completo: R$ 100", "Item específico: R$ 25"],
   },
 ];
 
@@ -43,7 +43,7 @@ const diferencas = [
   { icon: "🛡️", title: "Segurança", desc: "VPN dedicada, sem histórico de login suspeito. Sua conta protegida." },
   { icon: "⚡", title: "Velocidade", desc: "Equipe 24/7. Serviço concluído em horas, não dias." },
   { icon: "💬", title: "Suporte Direto", desc: "Acompanhamento via Discord em tempo real. Você sabe o que está rolando." },
-  { icon: "💰", title: "Melhor Preço", desc: "Preço justo, sem taxa de marketplace. Pagamento via Pix ou crypto." },
+  { icon: "💰", title: "Melhor Preço", desc: "Preço justo em REAL. Pagamento via Pix, rápido e sem taxa." },
 ];
 
 export default function Home() {
@@ -51,20 +51,17 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background com gradiente e textura */}
         <div className="absolute inset-0 bg-diablo-texture">
           <div className="absolute inset-0 bg-gradient-to-b from-diablo-black/60 via-diablo-black/40 to-diablo-black" />
-          {/* Efeito de glow vermelho */}
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-diablo-blood/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-diablo-gold/30 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
-            {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-diablo-blood/20 border border-diablo-blood/30 rounded-full text-xs text-diablo-blood-light uppercase tracking-widest mb-6 animate-glow">
               <span className="w-1.5 h-1.5 bg-diablo-blood-light rounded-full" />
-              Boosting Profissional
+              Boosting Profissional — Preço em R$
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-cinzel text-diablo-gold leading-tight mb-6">
@@ -74,8 +71,9 @@ export default function Home() {
             </h1>
 
             <p className="text-lg sm:text-xl text-text-secondary leading-relaxed mb-8 max-w-xl">
-              Serviços de boosting para Diablo Immortal. Do level 1 ao endgame,
+              Serviços de boosting para Diablo Immortal no Brasil. Do level 1 ao endgame,
               carries e farms — tudo que você precisa pra aproveitar o jogo sem o grind.
+              <span className="block mt-2 text-diablo-gold">Pagamento via Pix 💰</span>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -94,7 +92,6 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Stats */}
             <div className="flex gap-8 mt-12 pt-8 border-t border-diablo-stone-light/50">
               {[
                 { value: "500+", label: "Serviços" },
@@ -120,7 +117,7 @@ export default function Home() {
             </h2>
             <div className="gold-divider w-24 mx-auto mb-4" />
             <p className="text-text-secondary max-w-xl mx-auto">
-              Escolha o que precisa, a gente faz o trabalho pesado.
+              Preços em Reais (R$). Pagamento via Pix. Sem taxa de câmbio.
             </p>
           </div>
 
@@ -164,7 +161,7 @@ export default function Home() {
             </h2>
             <div className="gold-divider w-24 mx-auto mb-4" />
             <p className="text-text-secondary max-w-xl mx-auto">
-              Não somos apenas mais um boost. Somos jogadores veteranos.
+              Não somos apenas mais um boost. Somos jogadores veteranos — e brasileiros.
             </p>
           </div>
 
@@ -190,7 +187,7 @@ export default function Home() {
             Pronto para Evoluir?
           </h2>
           <p className="text-text-secondary max-w-lg mx-auto mb-8">
-            Chama no Discord. A gente faz o boost enquanto você aproveita o jogo de verdade.
+            Chama no Discord. Pagamento via Pix. A gente faz o boost enquanto você aproveita o jogo de verdade.
           </p>
           <Link
             href="/contato"

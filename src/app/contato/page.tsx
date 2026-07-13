@@ -30,7 +30,11 @@ const canais = [
 const faq = [
   {
     q: "Como funciona o serviço?",
-    a: "Você escolhe o serviço, entra em contato, paga, a gente faz o boost e avisa quando terminar. Simples.",
+    a: "Você escolhe o serviço, entra em contato, paga via Pix, a gente faz o boost e avisa quando terminar. Simples.",
+  },
+  {
+    q: "Por que preço em Real?",
+    a: "Porque somos brasileiros e nossos clientes são brasileiros. Pagamento via Pix, sem taxa de câmbio, sem surpresa de IOF. O preço que tá na tela é o que você paga.",
   },
   {
     q: "Minha conta corre risco?",
@@ -42,22 +46,17 @@ const faq = [
   },
   {
     q: "Quais formas de pagamento?",
-    a: "Pix (cotação do dólar do dia) e Crypto (BTC, ETH, USDT). Pagamento antecipado para serviços avulsos. Parcelamos pacotes acima de $50.",
+    a: "Pix (principal) e Crypto (BTC, ETH, USDT). Pagamento antecipado para serviços avulsos. Parcelamos pacotes acima de R$ 200.",
   },
   {
     q: "E se der algo errado?",
     a: "Oferecemos garantia de 48h. Se algo acontecer (raro), refazemos ou devolvemos. Nunca tivemos problema com ban por seguir nosso protocolo.",
-  },
-  {
-    q: "Vocês vendem itens do jogo?",
-    a: "Não vendemos itens avulsos. Fazemos o boost/farm. O item fica na sua conta limpo. Isso é mais seguro pra você.",
   },
 ];
 
 export default function Contato() {
   return (
     <>
-      {/* Header */}
       <section className="py-16 bg-diablo-dark border-b border-diablo-stone-light/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-5xl font-cinzel text-diablo-gold mb-4">
@@ -65,12 +64,11 @@ export default function Contato() {
           </h1>
           <div className="gold-divider w-24 mx-auto mb-4" />
           <p className="text-text-secondary max-w-xl mx-auto">
-            Escolhe o canal que preferir. A gente responde rápido.
+            Escolhe o canal que preferir. Pagamento via Pix 💰
           </p>
         </div>
       </section>
 
-      {/* Canais */}
       <section className="py-16 bg-diablo-black">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -81,7 +79,7 @@ export default function Contato() {
               >
                 <span className="text-4xl mb-3 block">{canal.icon}</span>
                 <h2 className="font-cinzel text-diablo-gold text-lg mb-2">{canal.title}</h2>
-                <p className="text-sm text-text-muted mb-1">{canal.desc}</p>
+                <p className="text-sm text-text-secondary mb-1">{canal.desc}</p>
                 <p className="text-xs text-diablo-gold-dark mb-4 font-mono">{canal.detail}</p>
                 <a
                   href={canal.href}
@@ -97,7 +95,6 @@ export default function Contato() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="py-16 bg-diablo-dark">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -130,13 +127,10 @@ export default function Contato() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-12 bg-diablo-black border-t border-diablo-stone-light/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-text-secondary text-sm mb-1">
-            Prefere um atendimento mais rápido?
-          </p>
-          <p className="text-diablo-gold font-cinzel">
+          <p className="text-diablo-gold font-cinzel text-lg mb-2">💰 Pix — pagamento mais rápido do Brasil</p>
+          <p className="text-text-secondary text-sm">
             💬 Discord é onde a gente responde mais rápido.
           </p>
         </div>
