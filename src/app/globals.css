@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Diablo Immortal Theme - Tailwind v4 */
+@theme {
+  /* Core palette */
+  --color-diablo-black: #0a0a0a;
+  --color-diablo-dark: #0d0d0d;
+  --color-diablo-darker: #050505;
+  --color-diablo-stone: #1a1a1a;
+  --color-diablo-stone-light: #2d2d2d;
+  --color-diablo-stone-lighter: #4a4a4a;
+  --color-diablo-blood: #8b0000;
+  --color-diablo-blood-light: #c41e3a;
+  --color-diablo-blood-dark: #5c0000;
+  --color-diablo-gold: #c9a84c;
+  --color-diablo-gold-light: #e0c878;
+  --color-diablo-gold-dark: #8a7030;
+  --color-diablo-fire: #ff4500;
+  --color-diablo-fire-light: #ff6a33;
+  --color-diablo-purple: #6b21a8;
+  --color-diablo-teal: #0d9488;
+
+  /* Semantic */
+  --color-surface: var(--color-diablo-black);
+  --color-surface-raised: var(--color-diablo-stone);
+  --color-text-primary: #e5e5e5;
+  --color-text-secondary: #a0a0a0;
+  --color-text-muted: #6b6b6b;
+  --color-accent: var(--color-diablo-gold);
+  --color-accent-hover: var(--color-diablo-gold-light);
+  --color-danger: var(--color-diablo-blood-light);
+  --color-border: var(--color-diablo-stone-light);
+
+  /* Fonts */
+  --font-cinzel: "Cinzel", serif;
+  --font-inter: "Inter", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-diablo-black);
+  color: var(--color-text-primary);
+  font-family: var(--font-inter);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-diablo-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-diablo-stone-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-diablo-blood);
+}
+
+/* Seleção de texto */
+::selection {
+  background-color: rgba(196, 30, 58, 0.3);
+  color: #e5e5e5;
+}
+
+/* Animações globais */
+@keyframes glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-blood {
+  0%, 100% { box-shadow: 0 0 5px rgba(139, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(196, 30, 58, 0.8); }
+}
+
+.animate-glow { animation: glow 3s ease-in-out infinite; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-blood { animation: pulse-blood 2s ease-in-out infinite; }
+
+/* Efeito de textura gótica para bg */
+.bg-diablo-texture {
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(201, 168, 76, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(0, 0, 0, 0.3) 0%, transparent 50%);
+}
+
+/* Linha decorativa dourada / gold divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-diablo-gold), transparent);
 }
