@@ -1,134 +1,157 @@
 import Link from "next/link";
 
-const categorias = [
-  {
-    title: "⚡ Power Leveling",
-    desc: "Cansei de grind? A gente sobe pra você.",
-    items: [
-      { name: "Level 1 → 60", desc: "Campanha completa + nível máximo", price: "R$ 60", time: "2-4h" },
-      { name: "Paragon 10 níveis", desc: "Grind de Paragon acelerado", price: "R$ 25", time: "1-2h" },
-      { name: "Paragon 50 níveis", desc: "Pacote completo de Paragon", price: "R$ 100", time: "6-8h" },
-      { name: "Paragon 100+ níveis", desc: "Para quem quer endgame rápido", price: "R$ 180", time: "12h+" },
-    ],
-  },
-  {
-    title: "👹 Helliquary Raids",
-    desc: "Chefes semanais sem estresse.",
-    items: [
-      { name: "1 Boss Helliquary", desc: "Carry individual", price: "R$ 20", time: "15min" },
-      { name: "Pack Semanal (3 bosses)", desc: "Todos os chefes da semana", price: "R$ 50", time: "45min" },
-      { name: "Pack Mensal", desc: "4 semanas cobertas", price: "R$ 180", time: "—" },
-      { name: "Helliquary + Trophy", desc: "Clear + troféu garantido", price: "R$ 35", time: "20min" },
-    ],
-  },
-  {
-    title: "🌀 Challenge Rift",
-    desc: "Suba nas paradas sem suar.",
-    items: [
-      { name: "Tier 1-50", desc: "Clear básico", price: "R$ 35", time: "30min" },
-      { name: "Tier 51-100", desc: "Rifts intermediários", price: "R$ 65", time: "1h" },
-      { name: "Tier 100-150", desc: "Rifts avançados", price: "R$ 120", time: "1.5h" },
-      { name: "Top Tier (150+)", desc: "Elite dos rifts", price: "R$ 200", time: "2h+" },
-    ],
-  },
-  {
-    title: "⚔️ PvP Battleground",
-    desc: "Domine o campo de batalha.",
-    items: [
-      { name: "Bronze → Prata", desc: "Rank inicial", price: "R$ 60", time: "1-2h" },
-      { name: "Prata → Ouro", desc: "Rank intermediário", price: "R$ 120", time: "2-4h" },
-      { name: "Ouro → Platina", desc: "Rank avançado", price: "R$ 200", time: "4-6h" },
-      { name: "Platina → Lendário", desc: "Top rank do servidor", price: "R$ 350+", time: "6-12h" },
-    ],
-  },
-  {
-    title: "🎫 Battle Pass",
-    desc: "BP completo sem esforço.",
-    items: [
-      { name: "Battle Pass Normal", desc: "40 níveis completos", price: "R$ 70", time: "2-3 dias" },
-      { name: "Battle Pass Reforçado", desc: "BP + bônus", price: "R$ 130", time: "2-3 dias" },
-      { name: "BP + Níveis Extras", desc: "Pass completo + 20 níveis extras", price: "R$ 180", time: "3-4 dias" },
-      { name: "BP Coleção (todo mês)", desc: "Assinatura mensal do BP", price: "R$ 250/mês", time: "—" },
-    ],
-  },
-  {
-    title: "💎 Farm de Itens",
-    desc: "Itens específicos sem RNG frustrante.",
-    items: [
-      { name: "Gema Lendária (1)", desc: "Gema lendária específica", price: "R$ 40", time: "1-3h" },
-      { name: "Set Completo (6 peças)", desc: "Set de armadura completo", price: "R$ 100", time: "4-8h" },
-      { name: "Item Lendário Específico", desc: "Item com atributos alvo", price: "R$ 25", time: "1-2h" },
-      { name: "Essência Legendária", desc: "Essência para build", price: "R$ 15", time: "30min" },
-    ],
-  },
-  {
-    title: "🏆 Serviços Extras",
-    desc: "O que mais precisar a gente faz.",
-    items: [
-      { name: "Dungeon Carry (por run)", desc: "Qualquer dungeon", price: "R$ 12", time: "10min" },
-      { name: "Elder Rift (10 runs)", desc: "Farm de rift completo", price: "R$ 50", time: "1h" },
-      { name: "Clan War / Shadow War", desc: "Participação em guerras", price: "R$ 25", time: "30min" },
-      { name: "Pacote Personalizado", desc: "Monte seu próprio combo", price: "Sob consulta", time: "—" },
-    ],
-  },
-];
-
 export default function Servicos() {
   return (
     <>
       <section className="py-16 bg-diablo-dark border-b border-diablo-stone-light/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-5xl font-cinzel text-diablo-gold mb-4">
-            Todos os Serviços
+            Serviços
           </h1>
           <div className="gold-divider w-24 mx-auto mb-4" />
           <p className="text-text-secondary max-w-xl mx-auto">
-            Preços em Reais (R$). Pagamento via Pix ou Crypto.
-            Desconto de 10% em pacotes com 3+ serviços.
+            Preços em Reais (R$). Pagamento via Pix.
           </p>
         </div>
       </section>
 
+      {/* Avulso */}
       <section className="py-16 bg-diablo-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          {categorias.map((cat) => (
-            <div key={cat.title}>
-              <div className="mb-6">
-                <h2 className="text-2xl font-cinzel text-diablo-gold">{cat.title}</h2>
-                <p className="text-sm text-text-muted mt-1">{cat.desc}</p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                {cat.items.map((item) => (
-                  <div
-                    key={item.name}
-                    className="p-4 bg-diablo-stone/30 border border-diablo-stone-light/50 rounded-lg hover:border-diablo-gold/20 transition-all"
-                  >
-                    <h3 className="text-sm font-cinzel text-diablo-gold mb-1">{item.name}</h3>
-                    <p className="text-xs text-text-muted mb-3">{item.desc}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-bold text-diablo-gold-light">{item.price}</span>
-                      <span className="text-[10px] text-text-muted uppercase">{item.time}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-cinzel text-diablo-gold mb-2">⚡ Avulso</h2>
+            <p className="text-sm text-text-muted">Preço fixo. Faz uma vez, paga uma vez.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-8 bg-diablo-stone/50 border border-diablo-stone-light rounded-lg text-center hover:border-diablo-gold/30 transition-all">
+              <span className="text-4xl mb-3 block">💎</span>
+              <h3 className="font-cinzel text-diablo-gold text-lg mb-1">Gema Laterais</h3>
+              <p className="text-xs text-text-muted mb-4">Farm completo de gemas laterais</p>
+              <p className="text-3xl font-cinzel text-diablo-gold-light font-bold mb-4">R$ 30</p>
+              <a
+                href="https://wa.me/5584988062980"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2 bg-diablo-gold text-diablo-black text-sm font-semibold rounded hover:bg-diablo-gold-light transition-colors"
+              >
+                📱 Comprar via WhatsApp
+              </a>
             </div>
-          ))}
+
+            <div className="p-8 bg-diablo-stone/50 border border-diablo-stone-light rounded-lg text-center hover:border-diablo-gold/30 transition-all">
+              <span className="text-4xl mb-3 block">🌀</span>
+              <h3 className="font-cinzel text-diablo-gold text-lg mb-1">Fenda do Medo</h3>
+              <p className="text-xs text-text-muted mb-4">Clear completo da Fenda do Medo</p>
+              <p className="text-3xl font-cinzel text-diablo-gold-light font-bold mb-4">R$ 30</p>
+              <a
+                href="https://wa.me/5584988062980"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2 bg-diablo-gold text-diablo-black text-sm font-semibold rounded hover:bg-diablo-gold-light transition-colors"
+              >
+                📱 Comprar via WhatsApp
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
+      {/* Semanal */}
+      <section className="py-16 bg-diablo-dark">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-cinzel text-diablo-gold mb-2">📅 Pacote Semanal</h2>
+            <p className="text-sm text-text-muted">1x por semana. Preço menor que avulso.</p>
+            <p className="text-lg font-cinzel text-diablo-gold mt-2">R$ 25 cada serviço</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 bg-diablo-stone/30 border border-diablo-stone-light/50 rounded-lg text-center">
+              <span className="text-3xl mb-2 block">💎</span>
+              <h3 className="font-cinzel text-diablo-gold">Gema Laterais</h3>
+              <p className="text-2xl font-cinzel text-diablo-gold-light font-bold mt-2">R$ 25</p>
+            </div>
+            <div className="p-6 bg-diablo-stone/30 border border-diablo-stone-light/50 rounded-lg text-center">
+              <span className="text-3xl mb-2 block">🌀</span>
+              <h3 className="font-cinzel text-diablo-gold">Fenda do Medo</h3>
+              <p className="text-2xl font-cinzel text-diablo-gold-light font-bold mt-2">R$ 25</p>
+            </div>
+          </div>
+
+          <div className="text-center mt-6">
+            <a
+              href="https://wa.me/5584988062980"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-diablo-stone-light text-white rounded hover:bg-diablo-stone-lighter transition-colors"
+            >
+              📱 Contratar Pacote Semanal
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Mensal */}
+      <section className="py-16 bg-diablo-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-lg mx-auto p-8 bg-diablo-stone/60 border-2 border-diablo-gold/40 rounded-lg text-center relative">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-diablo-gold text-diablo-black text-xs font-bold uppercase rounded-full">
+              Melhor Custo-Benefício
+            </div>
+            <h2 className="text-2xl font-cinzel text-diablo-gold mb-2 mt-2">📆 Pacote Mensal</h2>
+            <p className="text-sm text-text-muted mb-4">4x no mês — todos os serviços</p>
+            <p className="text-4xl font-cinzel text-diablo-gold-light font-bold mb-6">R$ 150/mês</p>
+
+            <ul className="space-y-3 mb-6 text-left max-w-xs mx-auto">
+              <li className="flex justify-between text-sm">
+                <span className="text-text-secondary">Gema Laterais (4x)</span>
+                <span className="text-diablo-gold font-mono">R$ 25 cada</span>
+              </li>
+              <li className="flex justify-between text-sm">
+                <span className="text-text-secondary">Fenda do Medo (4x)</span>
+                <span className="text-diablo-gold font-mono">R$ 25 cada</span>
+              </li>
+              <li className="flex justify-between text-sm pt-2 border-t border-diablo-stone-light/50">
+                <span className="text-diablo-gold">🔥 Brasa (Bônus)</span>
+                <span className="text-diablo-gold font-mono">Grátis</span>
+              </li>
+            </ul>
+
+            <a
+              href="https://wa.me/5584988062980"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-diablo-gold text-diablo-black font-semibold rounded hover:bg-diablo-gold-light transition-colors"
+            >
+              📱 Assinar Pacote Mensal
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="py-12 bg-diablo-dark border-t border-diablo-stone-light/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-text-secondary mb-4">
-            Não encontrou o que precisa? Serviço personalizado sob consulta.
-            Pagamos o melhor preço em Real — sem taxa de câmbio.
-          </p>
-          <Link
-            href="/contato"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-diablo-gold text-diablo-black font-semibold rounded hover:bg-diablo-gold-light transition-colors"
-          >
-            💬 Fale Conosco
-          </Link>
+          <p className="text-text-secondary mb-2">Tem dúvidas? A gente responde rápido.</p>
+          <div className="flex gap-4 justify-center">
+            <a
+              href="https://discord.gg/2UmnhteyB"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-diablo-gold text-diablo-black font-semibold rounded hover:bg-diablo-gold-light transition-colors"
+            >
+              💬 Discord
+            </a>
+            <a
+              href="https://wa.me/5584988062980"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 border border-diablo-stone-light text-text-secondary hover:text-diablo-gold rounded transition-all"
+            >
+              📱 WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </>

@@ -1,49 +1,41 @@
 import Link from "next/link";
 
-const services = [
+const servicos = [
   {
-    icon: "⚡",
-    title: "Power Leveling",
-    desc: "Suba de nível rapidamente. De 1 a 60 + Paragon sem estresse.",
-    prices: ["1-60: R$ 60", "Paragon 10 níveis: R$ 25", "Paragon 50 níveis: R$ 100"],
-  },
-  {
-    icon: "👹",
-    title: "Helliquary Raid",
-    desc: "Carry semanal nos chefes Helliquary. Toma conta de tudo.",
-    prices: ["Por boss: R$ 20", "Pack semanal (3 bosses): R$ 50", "Pack mensal: R$ 180"],
+    icon: "💎",
+    title: "Gema Laterais",
+    desc: "Farm de gemas laterais completo. Acelere seu progresso sem o grind diário.",
+    avulso: "R$ 30",
   },
   {
     icon: "🌀",
-    title: "Challenge Rift",
-    desc: "Clear de Challenge Rift em qualquer tier. Garantido.",
-    prices: ["Tier 1-50: R$ 35", "Tier 51-100: R$ 65", "Tier 100+: R$ 120"],
-  },
-  {
-    icon: "⚔️",
-    title: "PvP Rank Boost",
-    desc: "Suba seu ranking em Battlegrounds. Rating competitivo.",
-    prices: ["Bronze → Prata: R$ 60", "Prata → Ouro: R$ 120", "Ouro → Lendário: R$ 350+"],
-  },
-  {
-    icon: "🎫",
-    title: "Battle Pass",
-    desc: "Complete o Battle Pass diário/semanal sem jogar.",
-    prices: ["BP Normal: R$ 70", "BP Reforçado: R$ 130", "BP + Níveis: R$ 180"],
-  },
-  {
-    icon: "💎",
-    title: "Gem & Item Farm",
-    desc: "Farm de gemas lendárias, sets e equipamentos específicos.",
-    prices: ["Gema Lendária: R$ 40", "Set completo: R$ 100", "Item específico: R$ 25"],
+    title: "Fenda do Medo",
+    desc: "Clear completo da Fenda do Medo. Recompensas garantidas.",
+    avulso: "R$ 30",
   },
 ];
 
-const diferencas = [
-  { icon: "🛡️", title: "Segurança", desc: "VPN dedicada, sem histórico de login suspeito. Sua conta protegida." },
-  { icon: "⚡", title: "Velocidade", desc: "Equipe 24/7. Serviço concluído em horas, não dias." },
-  { icon: "💬", title: "Suporte Direto", desc: "Acompanhamento via Discord em tempo real. Você sabe o que está rolando." },
-  { icon: "💰", title: "Melhor Preço", desc: "Preço justo em REAL. Pagamento via Pix, rápido e sem taxa." },
+const pacotes = [
+  {
+    nome: "📅 Pacote Semanal",
+    freq: "1x por semana",
+    preco: "R$ 25 cada",
+    items: [
+      { name: "Gema Laterais", price: "R$ 25" },
+      { name: "Fenda do Medo", price: "R$ 25" },
+    ],
+  },
+  {
+    nome: "📆 Pacote Mensal",
+    freq: "4x no mês",
+    preco: "R$ 150/mês",
+    destaque: true,
+    items: [
+      { name: "Gema Laterais", price: "R$ 25" },
+      { name: "Fenda do Medo", price: "R$ 25" },
+      { name: "🔥 Brasa (Bônus)", price: "Grátis" },
+    ],
+  },
 ];
 
 export default function Home() {
@@ -61,7 +53,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-diablo-blood/20 border border-diablo-blood/30 rounded-full text-xs text-diablo-blood-light uppercase tracking-widest mb-6 animate-glow">
               <span className="w-1.5 h-1.5 bg-diablo-blood-light rounded-full" />
-              Boosting Profissional — Preço em R$
+              Serviços Diablo Immortal — Preço em R$
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-cinzel text-diablo-gold leading-tight mb-6">
@@ -71,9 +63,8 @@ export default function Home() {
             </h1>
 
             <p className="text-lg sm:text-xl text-text-secondary leading-relaxed mb-8 max-w-xl">
-              Serviços de boosting para Diablo Immortal no Brasil. Do level 1 ao endgame,
-              carries e farms — tudo que você precisa pra aproveitar o jogo sem o grind.
-              <span className="block mt-2 text-diablo-gold">Pagamento via Pix 💰</span>
+              Farm de Gemas Laterais e Fenda do Medo — avulso, semanal ou mensal.
+              Pagamento via Pix, acompanhamento no Discord.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -84,12 +75,14 @@ export default function Home() {
                 Ver Serviços
                 <span>→</span>
               </Link>
-              <Link
-                href="/contato"
+              <a
+                href="https://discord.gg/2UmnhteyB"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-diablo-stone-light text-text-secondary hover:text-diablo-gold hover:border-diablo-gold/30 rounded transition-all"
               >
-                💬 Fale Conosco
-              </Link>
+                💬 Discord
+              </a>
             </div>
 
             <div className="flex gap-8 mt-12 pt-8 border-t border-diablo-stone-light/50">
@@ -108,72 +101,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Serviços Section */}
+      {/* Serviços Avulso */}
       <section className="py-20 bg-diablo-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-cinzel text-diablo-gold mb-4">
-              Nossos Serviços
+              Serviços Avulso
             </h2>
             <div className="gold-divider w-24 mx-auto mb-4" />
             <p className="text-text-secondary max-w-xl mx-auto">
-              Preços em Reais (R$). Pagamento via Pix. Sem taxa de câmbio.
+              Preço fixo por serviço. Pagamento via Pix.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {services.map((svc) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {servicos.map((svc) => (
               <div
                 key={svc.title}
-                className="group p-6 bg-diablo-stone/50 border border-diablo-stone-light hover:border-diablo-gold/30 rounded-lg transition-all hover:bg-diablo-stone/80"
+                className="group p-8 bg-diablo-stone/50 border border-diablo-stone-light hover:border-diablo-gold/30 rounded-lg transition-all hover:bg-diablo-stone/80 text-center"
               >
-                <span className="text-3xl mb-3 block">{svc.icon}</span>
-                <h3 className="font-cinzel text-diablo-gold text-lg mb-2">{svc.title}</h3>
+                <span className="text-4xl mb-4 block">{svc.icon}</span>
+                <h3 className="font-cinzel text-diablo-gold text-xl mb-2">{svc.title}</h3>
                 <p className="text-sm text-text-muted mb-4 leading-relaxed">{svc.desc}</p>
-                <ul className="space-y-1">
-                  {svc.prices.map((p) => (
-                    <li key={p} className="text-xs text-diablo-gold-dark font-mono">
-                      {p}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-3xl font-cinzel text-diablo-gold-light font-bold">{svc.avulso}</p>
               </div>
             ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Link
-              href="/servicos"
-              className="inline-flex items-center gap-2 text-diablo-gold hover:text-diablo-gold-light transition-colors font-medium"
-            >
-              Ver todos os serviços detalhados →
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Diferenciais */}
+      {/* Pacotes */}
       <section className="py-20 bg-diablo-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-cinzel text-diablo-gold mb-4">
-              Por Que Nós?
+              Pacotes Recorrentes
             </h2>
             <div className="gold-divider w-24 mx-auto mb-4" />
             <p className="text-text-secondary max-w-xl mx-auto">
-              Não somos apenas mais um boost. Somos jogadores veteranos — e brasileiros.
+              Preço menor por serviço. Fidelidade tem vantagem.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {diferencas.map((item) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {pacotes.map((pct) => (
               <div
-                key={item.title}
-                className="text-center p-6 border border-diablo-stone-light/50 rounded-lg hover:border-diablo-gold/20 transition-colors"
+                key={pct.nome}
+                className={`relative p-8 rounded-lg border transition-all ${
+                  pct.destaque
+                    ? "bg-diablo-stone/60 border-diablo-gold/40 hover:border-diablo-gold/70"
+                    : "bg-diablo-stone/30 border-diablo-stone-light/50 hover:border-diablo-stone-light"
+                }`}
               >
-                <span className="text-4xl mb-3 block">{item.icon}</span>
-                <h3 className="font-cinzel text-diablo-gold mb-2">{item.title}</h3>
-                <p className="text-sm text-text-muted leading-relaxed">{item.desc}</p>
+                {pct.destaque && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-diablo-gold text-diablo-black text-xs font-bold uppercase rounded-full">
+                    Melhor Custo-Benefício
+                  </div>
+                )}
+                <div className="text-center mb-6">
+                  <h3 className="font-cinzel text-2xl text-diablo-gold mb-1">{pct.nome}</h3>
+                  <p className="text-xs text-text-muted uppercase tracking-wider">{pct.freq}</p>
+                  <p className={`text-2xl font-cinzel font-bold mt-3 ${pct.destaque ? "text-diablo-gold-light" : "text-diablo-gold"}`}>
+                    {pct.preco}
+                  </p>
+                </div>
+                <ul className="space-y-3">
+                  {pct.items.map((item) => (
+                    <li key={item.name} className="flex justify-between items-center text-sm">
+                      <span className="text-text-secondary">{item.name}</span>
+                      <span className="text-diablo-gold font-mono">{item.price}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -184,17 +183,29 @@ export default function Home() {
       <section className="py-20 bg-diablo-dark border-t border-diablo-stone-light/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-cinzel text-diablo-gold mb-4">
-            Pronto para Evoluir?
+            Bora Fechar?
           </h2>
           <p className="text-text-secondary max-w-lg mx-auto mb-8">
-            Chama no Discord. Pagamento via Pix. A gente faz o boost enquanto você aproveita o jogo de verdade.
+            Chama no Discord ou WhatsApp. Pagamento via Pix.
           </p>
-          <Link
-            href="/contato"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-diablo-gold text-diablo-black font-semibold rounded hover:bg-diablo-gold-light transition-colors"
-          >
-            💬 Entrar no Discord
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://discord.gg/2UmnhteyB"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-diablo-gold text-diablo-black font-semibold rounded hover:bg-diablo-gold-light transition-colors"
+            >
+              💬 Discord
+            </a>
+            <a
+              href="https://wa.me/5584988062980"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-diablo-stone-light text-text-secondary hover:text-diablo-gold hover:border-diablo-gold/30 rounded transition-all"
+            >
+              📱 WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </>

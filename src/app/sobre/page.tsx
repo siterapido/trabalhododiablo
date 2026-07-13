@@ -4,7 +4,7 @@ const passos = [
   {
     num: "01",
     title: "Escolha o Serviço",
-    desc: "Olha a lista de serviços, escolhe o que precisa. Se tiver dúvida, chama no Discord.",
+    desc: "Gema Laterais, Fenda do Medo — avulso, semanal ou mensal. O que precisar.",
   },
   {
     num: "02",
@@ -14,17 +14,17 @@ const passos = [
   {
     num: "03",
     title: "Pagamento via Pix",
-    desc: "Pix rápido e sem taxa de câmbio. Também aceitamos Crypto. Parcelamos pacotes acima de R$ 200.",
+    desc: "Pix rápido e sem taxa. Pacotes mensais podem ser parcelados.",
   },
   {
     num: "04",
     title: "A Gente Joga pra Você",
-    desc: "VPN dedicada, sem histórico de IP suspeito. Você recebe prints e atualizações em tempo real.",
+    desc: "VPN dedicada, sem histórico de IP suspeito. Você recebe prints em tempo real.",
   },
   {
     num: "05",
     title: "Pronto!",
-    desc: "Serviço concluído. Você troca a senha e volta a jogar. Garantia de 48h se algo der errado.",
+    desc: "Serviço concluído. Você troca a senha e volta a jogar. Garantia inclusa.",
   },
 ];
 
@@ -32,22 +32,22 @@ const seguranca = [
   {
     icon: "🛡️",
     title: "VPN Dedicada",
-    desc: "Usamos IPs residuais próximos à sua região. Zero chance de flag de login suspeito.",
+    desc: "IPs residuais próximos à sua região. Zero flag de login suspeito.",
   },
   {
     icon: "🔒",
     title: "Modo Sombra",
-    desc: "Nunca jogamos com seu personagem em horários suspeitos. Respeitamos seu fuso.",
+    desc: "Jogamos nos mesmos horários que você. Respeitamos seu fuso.",
   },
   {
     icon: "🚫",
     title: "Sem Hacks",
-    desc: "Zero cheat, zero bot, zero terceiro. Tudo manual, como se você mesmo estivesse jogando.",
+    desc: "Zero cheat, zero bot. Tudo manual, como se você mesmo estivesse jogando.",
   },
   {
     icon: "✅",
     title: "Garantia",
-    desc: "Se algo der errado (raro), refazemos o serviço ou devolvemos. Sem burocracia.",
+    desc: "Se algo der errado, refazemos ou devolvemos. Sem burocracia.",
   },
 ];
 
@@ -61,8 +61,7 @@ export default function Sobre() {
           </h1>
           <div className="gold-divider w-24 mx-auto mb-4" />
           <p className="text-text-secondary max-w-xl mx-auto">
-            Somos jogadores veteranos de Diablo Immortal. Conhecemos o jogo a fundo — cada mecânica,
-            cada farm, cada build. E usamos esse conhecimento pra te ajudar.
+            Farm de Gemas Laterais e Fenda do Medo. Preço justo em Real, pagamento via Pix.
           </p>
         </div>
       </section>
@@ -72,22 +71,16 @@ export default function Sobre() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl font-cinzel text-diablo-gold mb-4">
-                Mais que Boost. Parceria.
+                Foco no que importa
               </h2>
               <div className="space-y-4 text-sm text-text-secondary leading-relaxed">
                 <p>
-                  Começamos como jogadores casuais. Viramos veterans. E percebemos que
-                  a maioria das pessoas não tem 6 horas por dia pra farmar Paragon ou
-                  subir no PvP.
+                  Sabemos como o grind de gemas e fendas no Diablo Immortal pode ser cansativo.
+                  A gente faz o trabalho pesado pra você.
                 </p>
                 <p>
-                  A Blizzard criou um jogo incrível, mas o grind pós-endgame é pesado.
-                  A gente acredita que você deveria poder aproveitar o melhor do jogo
-                  sem passar 40h por semana na frente da tela — e pagando em Real,
-                  sem taxa de câmbio abusiva.
-                </p>
-                <p>
-                  Por isso a gente faz o trabalho pesado. Você curte o resultado.
+                  Dois serviços, bem feitos, preço justo. Sem enrolação.
+                  Pagamento em Real, atendimento em português no Discord e WhatsApp.
                 </p>
               </div>
             </div>
@@ -115,7 +108,7 @@ export default function Sobre() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-cinzel text-diablo-gold mb-4">
-              Segurança em Primeiro Lugar
+              Segurança
             </h2>
             <div className="gold-divider w-20 mx-auto" />
           </div>
@@ -158,7 +151,7 @@ export default function Sobre() {
       <section className="py-12 bg-diablo-dark border-t border-diablo-stone-light/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-xl font-cinzel text-diablo-gold mb-3">Bora? 🔥</h2>
-          <p className="text-text-secondary text-sm mb-4">Pagamento via Pix — rapidinho.</p>
+          <p className="text-text-secondary text-sm mb-4">Pagamento via Pix</p>
           <Link
             href="/contato"
             className="inline-flex items-center gap-2 px-6 py-3 bg-diablo-gold text-diablo-black font-semibold rounded hover:bg-diablo-gold-light transition-colors"
